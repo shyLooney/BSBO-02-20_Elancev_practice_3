@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        //Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-        //intent.setType("*/*");
-        //intent.putExtra(Intent.EXTRA_TEXT, "Mirea");
-        //startActivity(Intent.createChooser(intent, "Выбор за вами!"));
-        Intent intent = new Intent(Intent.ACTION_PICK);
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setType("*/*");
-        ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>()
+        intent.putExtra(Intent.EXTRA_TEXT, "Mirea");
+        startActivity(Intent.createChooser(intent, "Выбор за вами!"));
+        //Intent intent = new Intent(Intent.ACTION_PICK);
+        //intent.setType("*/*");
+        /*ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>()
         {
             @Override
             public void onActivityResult(ActivityResult result) {
@@ -40,6 +40,6 @@ public class MainActivity extends AppCompatActivity {
         ActivityResultLauncher<Intent> imageActivityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 callback);
-        imageActivityResultLauncher.launch(intent);
+        imageActivityResultLauncher.launch(intent);*/
     }
 }
